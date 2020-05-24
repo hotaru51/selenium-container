@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+
+  selenium-server:
+    build: ./server
+    networks:
+      - selenium
+    ports:
+      - "4444:4444"
+    shm_size: 256m
+
+  selenium-client:
+    build: ./client
+    depends_on:
+      - selenium-server
+    networks:
+      - selenium
+    entrypoint: ["node", "-e","while(true) { ; }"]
+
+networks:
+  selenium:
