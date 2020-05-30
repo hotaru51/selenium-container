@@ -1,3 +1,6 @@
 node_modules/
 yarn-error.log
 /client/*.js
+/client/config.json
+/client/images/*
+!.keep
