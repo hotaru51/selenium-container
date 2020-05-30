@@ -15,7 +15,14 @@ services:
       - selenium-server
     networks:
       - selenium
-    entrypoint: ["node", "-e","while(true) { ; }"]
+    volumes:
+      - type: bind
+        source: ./client/config.json
+        target: /app/config.json
+      - type: bind
+        source: ./client/images
+        target: /app/images
+    tty: true
 
 networks:
   selenium:
