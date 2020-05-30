@@ -1,0 +1,6 @@
+Dockerfile
+node_modules/
+images/
+*.js
+config.json*
+yarn-error.log
