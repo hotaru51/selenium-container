@@ -1,0 +1,4 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+0 10 * * *   root    /opt/selenium-container/cron-script/mf-reload.sh
+0 22 * * *   root    /opt/selenium-container/cron-script/mf-reload.sh
