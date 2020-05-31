@@ -8,6 +8,7 @@ services:
     ports:
       - "4444:4444"
     shm_size: 256m
+    restart: always
 
   selenium-client:
     build: ./client
@@ -15,7 +16,15 @@ services:
       - selenium-server
     networks:
       - selenium
-    entrypoint: ["node", "-e","while(true) { ; }"]
+    volumes:
+      - type: bind
+        source: ./client/config.json
+        target: /app/config.json
+      - type: bind
+        source: ./client/images
+        target: /app/images
+    tty: true
+    restart: always
 
 networks:
   selenium:
