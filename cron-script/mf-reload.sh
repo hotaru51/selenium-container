@@ -33,7 +33,7 @@ if [ -z "$(compose_cmd ps selenium-client | grep 'Up')" ]; then
 fi
 
 INFO_MSG 'execute mf-reload.js.'
-compose_cmd exec selenium-client node mf-reload.js 2>&1 | tee -a ${LOG}
+compose_cmd exec -T selenium-client node mf-reload.js 2>&1 | tee -a ${LOG}
 
 LOGFOOTER
 exit
